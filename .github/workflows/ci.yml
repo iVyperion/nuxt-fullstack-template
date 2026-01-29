@@ -68,8 +68,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            mkdir -p /srv/${{ github.event.repository.name }}/${{ env.ENV }}
-            cd /srv/${{ github.event.repository.name }}/${{ env.ENV }}
+            mkdir -p /mnt/web_pool/containers/${{ github.event.repository.name }}/${{ env.ENV }}
+            cd /mnt/web_pool/containers/${{ github.event.repository.name }}/${{ env.ENV }}
             
             # Always recreate docker-compose.yml
             cat > docker-compose.yml << DOCKER_COMPOSE_EOF
