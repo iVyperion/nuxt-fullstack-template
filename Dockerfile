@@ -12,6 +12,8 @@ RUN corepack enable pnpm && pnpm install --frozen-lockfile
 # Copy source code
 COPY . .
 
+RUN pnpm exec prisma generate
+
 # Build application
 RUN pnpm build
 
@@ -23,6 +25,7 @@ WORKDIR /app
 # Copy built application from builder
 COPY --from=builder /app/.output .output
 COPY --from=builder /app/node_modules node_modules
+COPY --from=builder /app/prisma/generated ./prisma/generated
 
 # Expose port
 EXPOSE 3000
