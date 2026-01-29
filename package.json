@@ -1,0 +1,23 @@
+{
+  "name": "nuxt-fullstack-template",
+  "version": "1.0.0",
+  "description": "Deployment-ready Nuxt fullstack template with Docker, CI/CD, and multi-environment setup",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck",
+    "lint": "eslint .",
+    "docker:build": "docker build -t nuxt-app .",
+    "docker:run": "docker run -p 3000:3000 nuxt-app",
+    "db:start": "cd postgresql && docker-compose up -d && cd ..",
+    "db:stop": "cd postgresql && docker-compose down && cd ..",
+    "db:logs": "cd postgresql && docker-compose logs -f && cd .."
+  },
+  "devDependencies": {
+    "nuxt": "^4.2.2"
+  },
+  "packageManager": "pnpm@10.26.1"
+}

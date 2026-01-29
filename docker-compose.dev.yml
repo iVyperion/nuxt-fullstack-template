@@ -1,0 +1,26 @@
+# Optional development tools
+# Start with: docker-compose -f docker-compose.dev.yml up -d
+# This file is separate to keep production docker-compose.yml clean
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@admin.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+      PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION: 'False'
+      PGADMIN_CONFIG_COOKIE_DEFAULT_SECURE: 'False'
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    networks:
+      - default
+
+volumes:
+  pgadmin_data:
+    driver: local

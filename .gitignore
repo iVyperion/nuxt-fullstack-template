@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+.nuxt/
+.output/
+dist/
+
+# Environment variables (local)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Misc
+.cache/
+coverage/
+.nyc_output/
+
+# Prisma
+.prisma/
+prisma/generated/
+
+# Docker
+.dockerignore
+
+# OS
+Thumbs.db
+.DS_Store
