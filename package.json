@@ -7,18 +7,36 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@iconify-json/lucide": "^1.2.82",
+    "@iconify-json/simple-icons": "^1.2.63",
     "@nuxt/eslint": "1.13.0",
     "@nuxt/hints": "1.0.0-alpha.6",
     "@nuxt/image": "2.0.0",
     "@nuxt/ui": "4.4.0",
+    "@prisma/adapter-pg": "^7.3.0",
+    "@prisma/client": "^7.3.0",
     "eslint": "^9.39.2",
     "nuxt": "^4.3.0",
+    "nuxt-auth-utils": "0.5.28",
+    "nuxt-nodemailer": "^1.1.4",
+    "pg": "^8.17.2",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.1.18",
+    "@types/pg": "^8.16.0",
+    "autoprefixer": "^10.4.23",
+    "dotenv": "^17.2.3",
+    "postcss": "^8.5.6",
+    "prisma": "^7.3.0",
     "tailwindcss": "^4.1.18",
-    "typescript": "^5.9.3",
-    "vue": "^3.5.27",
-    "vue-router": "^4.6.4"
+    "tsx": "^4.21.0",
+    "vue-tsc": "^3.2.4"
   }
 }
