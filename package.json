@@ -1,23 +1,24 @@
 {
-  "name": "nuxt-fullstack-template",
-  "version": "1.0.0",
-  "description": "Deployment-ready Nuxt fullstack template with Docker, CI/CD, and multi-environment setup",
-  "private": true,
+  "name": "eventleadr",
   "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "nuxt dev",
     "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "typecheck": "nuxt typecheck",
-    "lint": "eslint .",
-    "docker:build": "docker build -t nuxt-app .",
-    "docker:run": "docker run -p 3000:3000 nuxt-app",
-    "db:start": "cd postgresql && docker-compose up -d && cd ..",
-    "db:stop": "cd postgresql && docker-compose down && cd ..",
-    "db:logs": "cd postgresql && docker-compose logs -f && cd .."
+    "postinstall": "nuxt prepare"
   },
-  "devDependencies": {
-    "nuxt": "^4.2.2"
-  },
-  "packageManager": "pnpm@10.26.1"
+  "dependencies": {
+    "@nuxt/eslint": "1.13.0",
+    "@nuxt/hints": "1.0.0-alpha.6",
+    "@nuxt/image": "2.0.0",
+    "@nuxt/ui": "4.4.0",
+    "eslint": "^9.39.2",
+    "nuxt": "^4.3.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3",
+    "vue": "^3.5.27",
+    "vue-router": "^4.6.4"
+  }
 }

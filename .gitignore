@@ -1,44 +1,24 @@
-# Dependencies
-node_modules/
-.pnpm-store/
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
-# Build output
-.nuxt/
-.output/
-dist/
-
-# Environment variables (local)
-.env
-.env.local
-.env.*.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
+# Node dependencies
+node_modules
 
 # Logs
-logs/
+logs
 *.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
 
 # Misc
-.cache/
-coverage/
-.nyc_output/
-
-# Prisma
-.prisma/
-prisma/generated/
-
-# Docker
-.dockerignore
-
-# OS
-Thumbs.db
 .DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
