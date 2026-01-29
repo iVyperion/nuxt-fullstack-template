@@ -107,6 +107,13 @@ jobs:
             
             export NUXT_SESSION_PASSWORD="${{ env.NUXT_SESSION_PASSWORD }}"
             export NUXT_DATABASE_URL="${{ env.NUXT_DATABASE_URL }}"
+
+            echo "${{ secrets.GHCR_TOKEN }}" | docker login ghcr.io \
+              -u "${{ secrets.GHCR_USERNAME }}" \
+              --password-stdin
             
             docker compose pull
             docker compose up -d
+
+            docker logout ghcr.io
+
